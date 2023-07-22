@@ -1,0 +1,72 @@
+{
+  "menuItems": [
+    {
+      "label": "Services",
+      "items": [
+        {
+          "label": "New",
+          "icon": "pi pi-fw pi-plus",
+          "items": [
+            {
+              "label": "Bookmark",
+              "icon": "pi pi-fw pi-bookmark"
+            },
+            {
+              "label": "Video",
+              "icon": "pi pi-fw pi-video"
+            }
+          ]
+        },
+        {
+          "label": "Delete",
+          "icon": "pi pi-fw pi-trash"
+        },
+        {
+          "separator": true
+        },
+        {
+          "label": "Export",
+          "icon": "pi pi-fw pi-external-link"
+        }
+      ]
+    },
+    {
+      "label": "User Mangement"
+    },
+    {
+      "label": "My Orders"
+    },
+    {
+      "label": "Reports"
+    },
+    {
+      "label": "Stamp Inventory"
+    },
+    {
+      "label": "Bar Codes"
+    },
+    {
+      "label": "Invoices"
+    },
+    {
+      "icon": "pi pi-fw pi-bell"
+    }
+  ],
+  "cities": [
+    { "name": "LOGOUT", "code": "LO" }
+  ],
+  "cities2": [
+    { "name": "#33024544", "code": "2 Files are waiting for Upload", "day": "10 days Left" },
+    { "name": "#33024544", "code": "2 Files are waiting for Upload", "day": "10 days left" },
+    { "name": "#33024544", "code": "2 Files are waiting for Upload", "day": "10 days left" },
+    { "name": "#33024544", "code": "2 Files are waiting for Upload", "day": "10 days left" },
+    { "name": "#33024544", "code": "2 Files are waiting for Upload", "day": "10 days left" },
+    { "name": "#33024544", "code": "2 Files are waiting for Upload", "day": "10 days left" }
+  ],
+  "cities3": [
+    { "id": "10", "status": "In Progress", "Report": "+2.4%", "icon": "pi pi-fw pi-bell" },
+    { "id": "5", "status": "In Progress", "Report": "+2.4%", "icon": "pi pi-fw pi-bell" },
+    { "id": "3", "status": "Completed", "Report": "+2.4%", "icon": "pi pi-fw pi-bell" },
+    { "id": "2", "status": "Cancelled", "Report": "+2.4%", "icon": "pi pi-fw pi-bell" }
+  ]
+}

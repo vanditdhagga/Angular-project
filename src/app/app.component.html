@@ -1,0 +1,127 @@
+<header>
+    <div class="layout">
+        <p-menubar [model]="items">
+            <ng-template pTemplate="start">
+                <img src="assets/images/cropped-logo.png" height="40" class="mr-2" />
+            </ng-template>
+            <ng-template pTemplate="end">
+                <p-dropdown [options]="cities" placeholder="Michael Smith" [editable]="true"
+                    optionLabel="name"></p-dropdown>
+            </ng-template>
+        </p-menubar>
+    </div>
+</header>
+<div class="content-wpr">
+    <div class="layout">
+        <div class="content-inner">
+            <div class="sidebar">
+                <p-card class="">
+                    <p>Welcome Back ,<b>Michael</b></p>
+                    <p class="m-0">
+                        <i class="pi pi-wave"></i>
+                        {{formattedDate}}
+                    </p>
+                </p-card>
+                <p-card>
+                    <p>
+                        <b>MY Wallet</b> <i class="pi pi-wallet" style="color: slateblue"></i>
+                    </p>
+                    <p class="m-0">
+                    <h2>
+                        <p>{{Value | currency:'INR'}}</p>
+                    </h2>
+                    <p>
+                        <b>Running Low?<a href="">Notify Admin</a> now.</b>
+                    </p>
+                </p-card>
+                <p-card header="Pending Actions" class="actions">
+                    <div class="childCard">
+                        <p-card *ngFor="let item of cities2" styleClass="">
+                            <div class="days">
+                                <p class="id-text"><b>{{item.name}}</b></p>
+                                <p class="days-text">{{item.day}}</p>
+                            </div>
+                            <p>{{item.code}}</p>
+                        </p-card>
+                    </div>
+                </p-card>
+            </div>
+            <div class="content-sec">
+                <p-card header="Frequently Used" class="card-container frequently-sec">
+                    <div class="frequently-box">
+                        <h5>Contract Execution Upload</h5>
+                        <p>This is the content of container 1.</p>
+                        <a href="javascript:;">Get Starded >></a>
+                    </div>
+
+                    <div class="frequently-box">
+                        <h5>E-Stamp Services</h5>
+                        <p>This is the content of container 2.</p>
+                        <a href="javascript:;">Get Starded >></a>
+                    </div>
+
+                    <div class="frequently-box">
+                        <h5>E-Sign Services</h5>
+                        <p>This is the content of container 3.</p>
+                        <a href="javascript:;">Get Starded >></a>
+                    </div>
+                </p-card>
+                <div class="order-details-sec">
+                    <div class="order-filter">
+                        <p-dropdown class="brances-filter" placeholder="All Branches"></p-dropdown>
+                        <div class="range-filter">
+                            <p-calendar [monthNavigator]="true" [yearNavigator]="true" [yearRange]="customYearRange"
+                                placeholder="Custom Range " [contentEditable]="false"
+                                (onYearChange)="onYearChange($event)" (onMonthChange)="onMonthChange($event)">
+                                <ng-template pTemplate="header">
+                                    <div class="custom-calendar-header">
+                                        <button class="custom-button" (click)="prevYear()"></button>
+                                        <button class="custom-button" (click)="prevMonth()"></button>
+                                        <span class="custom-month-year">{{ currentMonth }} {{ currentYear }}</span>
+                                        <button class="custom-button" (click)="nextMonth()">></button>
+                                        <button class="custom-button" (click)="nextYear()">>></button>
+                                    </div>
+                                </ng-template>
+                            </p-calendar>
+                            <p-calendar [placeholder]="formattedDate" [showIcon]="true"></p-calendar>
+                        </div>
+                    </div>
+                    <p-card class="details">
+                        <ng-template pTemplate="header">
+                            <div class="card-header">
+                                <p class="p-card-title">Order Details</p>
+                                <a href="javascript:;">View All</a>
+                            </div>
+                        </ng-template>
+                        <div class="order-details-body">
+                            <div *ngFor="let item of cities3" class="order-details-box">
+                                <div class="nuber-and-icon">
+                                    <h5>{{item.id}}</h5>
+                                    <div class="icon"></div>
+                                </div>
+                                <p>{{item.status}}</p>
+                                <div class="report">
+                                    <i class="pi pi-chart-line" style="color: green"></i>
+                                    <p>{{item.Report}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </p-card>
+                </div>
+
+                <div class="chart-sec">
+                    <p-card header="E-Sign Count">
+                        <div class="card flex justify-content-center">
+                            <p-chart type="doughnut" [data]="data" [options]="options" height="150px"></p-chart>
+                        </div>
+                    </p-card>
+                    <p-card header="E-Stamp Count">
+                        <div class="card flex justify-content-center">
+                            <p-chart type="doughnut" [data]="data" [options]="options" height="150px"></p-chart>
+                        </div>
+                    </p-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
